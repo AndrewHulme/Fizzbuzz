@@ -7,7 +7,30 @@ describe 'fizzbuzz' do
   end
   
   
-  it 'returns "buzz" when passed 5' do
-     expect(fizzbuzz(5)).to eq 'buzz'
+  it 'returns "buzz" when passed 5 or a multiple of 5' do
+    expect(fizzbuzz(5)).to eq 'buzz'
+    expect(fizzbuzz(10)).to eq 'buzz'
+    expect(fizzbuzz(20)).to eq 'buzz'
   end
+  
+  it 'returns "fizzbuzz" when passed a multiple of 3 and 5' do
+    expect(fizzbuzz(15)).to eq 'fizzbuzz'
+  end
+  
+  it 'returns the number if not a multiple of 3 or 5' do
+    expect(fizzbuzz(4)).to eq 4
+    expect(fizzbuzz(7)).to eq 7
+    expect(fizzbuzz(11)).to eq 11
+  end
+  
+  it 'if input is above 100 it returns "Input out of bounds"' do
+    expect(fizzbuzz(121)).to eq "Input out of bounds"
+    expect(fizzbuzz(129)).to eq "Input out of bounds"
+  end
+  
+  it 'if input is below 1 it returns "Input out of bounds"' do
+    expect(fizzbuzz(-1)).to eq "Input out of bounds"
+    expect(fizzbuzz(0)).to eq "Input out of bounds"
+    expect(fizzbuzz(-10)).to eq "Input out of bounds"
+  end  
 end

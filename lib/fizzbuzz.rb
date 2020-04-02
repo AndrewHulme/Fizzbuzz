@@ -1,7 +1,15 @@
 def fizzbuzz(num)
-  if num % 3 == 0
-    return 'fizz'
-  elsif num == 5
-    return 'buzz'
+  if num < 100 && num >= 1
+    if num % 3 == 0 && num % 5 == 0
+      return 'fizzbuzz'
+    elsif num % 3 == 0
+      return 'fizz'
+    elsif num % 5 == 0
+      return 'buzz'
+    else
+      return num
+    end
+  else
+    return "Input out of bounds"
   end
 end 
